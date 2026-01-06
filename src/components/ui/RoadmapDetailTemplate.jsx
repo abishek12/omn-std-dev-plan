@@ -28,7 +28,7 @@ const RoadmapDetailTemplate = ({
 
   const handleNext = () => {
     if (nextStepId) {
-      navigate(`/roadmap/${nextStepId}`);
+      navigate(`/roadmap/${stepNumber}/slides/1`);
     }
   };
 
@@ -150,6 +150,39 @@ const RoadmapDetailTemplate = ({
         {/* Sidebar */}
         <div className="lg:col-span-1">
           <div className="bg-gray-50 rounded-xl p-6 sticky top-8">
+            <div className="space-y-3 mb-8">
+              {/* Estimated Time */}
+              <div className="mb-8 p-4 bg-white rounded-lg border border-gray-200">
+                <div className="flex items-center">
+                  <ClockIcon className="h-5 w-5 text-blue-500 mr-3" />
+                  <div>
+                    <h4 className="font-bold text-gray-800">Estimated Time</h4>
+                    <p className="text-gray-600">{estimatedTime}</p>
+                  </div>
+                </div>
+              </div>
+
+              {prevStepId && (
+                <button
+                  onClick={handlePrev}
+                  className="w-full flex items-center justify-center border-2 border-gray-300 text-gray-700 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                >
+                  <ArrowLeftIcon className="h-4 w-4 mr-2" />
+                  Previous Step
+                </button>
+              )}
+
+              {nextStepId && (
+                <button
+                  onClick={handleNext}
+                  className="w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
+                >
+                  Start
+                  <ArrowLeftIcon className="h-4 w-4 ml-2 rotate-180" />
+                </button>
+              )}
+            </div>
+
             {/* Prerequisites */}
             {prerequisites.length > 0 && (
               <div className="mb-8">
@@ -166,17 +199,6 @@ const RoadmapDetailTemplate = ({
                 </ul>
               </div>
             )}
-
-            {/* Estimated Time */}
-            <div className="mb-8 p-4 bg-white rounded-lg border border-gray-200">
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 text-blue-500 mr-3" />
-                <div>
-                  <h4 className="font-bold text-gray-800">Estimated Time</h4>
-                  <p className="text-gray-600">{estimatedTime}</p>
-                </div>
-              </div>
-            </div>
 
             {/* Progress Tracking */}
             <div className="mb-8">
@@ -200,38 +222,6 @@ const RoadmapDetailTemplate = ({
                   Mark as Complete
                 </button>
               </div>
-            </div>
-
-            {/* Navigation */}
-            <div className="space-y-3">
-              <h3 className="text-lg font-bold text-gray-800">Navigation</h3>
-
-              {prevStepId && (
-                <button
-                  onClick={handlePrev}
-                  className="w-full flex items-center justify-center border-2 border-gray-300 text-gray-700 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-                >
-                  <ArrowLeftIcon className="h-4 w-4 mr-2" />
-                  Previous Step
-                </button>
-              )}
-
-              {nextStepId && (
-                <button
-                  onClick={handleNext}
-                  className="w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
-                >
-                  Next Step
-                  <ArrowLeftIcon className="h-4 w-4 ml-2 rotate-180" />
-                </button>
-              )}
-
-              <Link
-                to="/"
-                className="block text-center border-2 border-gray-300 text-gray-700 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-              >
-                Back to Roadmap
-              </Link>
             </div>
           </div>
         </div>
