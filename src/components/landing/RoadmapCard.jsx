@@ -11,9 +11,13 @@ import {
   TrophyIcon,
   LightBulbIcon,
   CodeBracketIcon,
+  EyeIcon,
 } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 
 const RoadmapCard = ({ item, index, totalItems, isEven, onComplete }) => {
+  const navigate = useNavigate();
+
   const iconMap = {
     AcademicCapIcon,
     UserGroupIcon,
@@ -59,6 +63,17 @@ const RoadmapCard = ({ item, index, totalItems, isEven, onComplete }) => {
     }
   };
 
+  const handleCardClick = () => {
+    if (item.status !== "locked") {
+      navigate(`/roadmap/${item.id}`);
+    }
+  };
+
+  const handleViewDetails = (e) => {
+    e.stopPropagation();
+    navigate(`/roadmap/${item.id}`);
+  };
+
   return (
     <div
       className={`relative flex flex-col md:flex-row ${
@@ -90,9 +105,12 @@ const RoadmapCard = ({ item, index, totalItems, isEven, onComplete }) => {
         <div
           className={`rounded-2xl p-6 shadow-lg border-2 ${item.borderColor} ${
             item.bgColor
-          } transition-all duration-300 hover:shadow-xl ${
-            item.status === "locked" ? "opacity-80" : ""
+          } transition-all duration-300 hover:shadow-xl cursor-pointer ${
+            item.status === "locked"
+              ? "opacity-80 cursor-not-allowed"
+              : "hover:-translate-y-1"
           }`}
+          onClick={handleCardClick}
         >
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center">
@@ -125,6 +143,15 @@ const RoadmapCard = ({ item, index, totalItems, isEven, onComplete }) => {
                 </h3>
               </div>
             </div>
+            {item.status !== "locked" && (
+              <button
+                onClick={handleViewDetails}
+                className="ml-4 p-2 text-gray-400 hover:text-blue-500 transition-colors"
+                title="View Details"
+              >
+                <EyeIcon className="h-5 w-5" />
+              </button>
+            )}
           </div>
 
           <p className="text-gray-600 mb-6">{item.description}</p>
