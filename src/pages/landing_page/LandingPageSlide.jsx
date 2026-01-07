@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  XMarkIcon,
-  AcademicCapIcon,
-  CheckCircleIcon,
-  BookOpenIcon,
-  VideoCameraIcon,
-  QuestionMarkCircleIcon,
-  ClipboardDocumentCheckIcon,
-  LightBulbIcon,
-} from "@heroicons/react/24/outline";
 
 import Layout from "../../Layout";
 
 import M1S1 from "./slides/m1.s1";
 import M1S2 from "./slides/m1.s2";
 import M1S3 from "./slides/m1.s3";
+import M1S4 from "./slides/m1.s4";
+
 import SlideWrapper from "../../components/slides/SlideWrapper";
 
 const LandingPageSlide = () => {
@@ -31,7 +21,7 @@ const LandingPageSlide = () => {
     1: {
       title: "Getting Started",
       totalSlides: 3,
-      components: [M1S1, M1S2, M1S3],
+      components: [M1S1, M1S2, M1S3, M1S4],
       color: "from-blue-600 to-indigo-700",
     },
     2: {

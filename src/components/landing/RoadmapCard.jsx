@@ -12,6 +12,7 @@ import {
   LightBulbIcon,
   CodeBracketIcon,
   EyeIcon,
+  MusicalNoteIcon,
 } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const RoadmapCard = ({ item, index, totalItems, isEven, onComplete }) => {
     TrophyIcon,
     LightBulbIcon,
     CodeBracketIcon,
+    MusicalNoteIcon,
   };
 
   const getIconComponent = (iconName) => {

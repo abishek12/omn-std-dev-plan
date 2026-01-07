@@ -2,7 +2,7 @@ const RoadmapHeader = () => {
   return (
     <div className="text-center mb-10 md:mb-16">
       <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-        Learning Journey Roadmap
+        LEEP: Student Development Plan
       </h1>
       <p className="text-gray-600 max-w-2xl mx-auto text-lg">
         Follow this sequential plan to master the course material. Complete each

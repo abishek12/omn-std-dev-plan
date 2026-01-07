@@ -1,7 +1,7 @@
 const roadMapItems = [
   {
     id: 1,
-    title: "Getting Started",
+    title: "Find My Why",
     description: "Introduction to the platform and course overview",
     status: "completed",
     iconName: "AcademicCapIcon",
@@ -13,7 +13,7 @@ const roadMapItems = [
   },
   {
     id: 2,
-    title: "Course Orientation",
+    title: "Squad Goals & Self-Growth",
     description: "Understand the learning objectives and assessment methods",
     status: "current",
     iconName: "BookOpenIcon",
@@ -25,7 +25,7 @@ const roadMapItems = [
   },
   {
     id: 3,
-    title: "Fundamentals Review",
+    title: "Own Your Zone",
     description: "Brush up on prerequisite knowledge and concepts",
     status: "locked",
     iconName: "LightBulbIcon",
@@ -37,7 +37,7 @@ const roadMapItems = [
   },
   {
     id: 4,
-    title: "Core Concepts",
+    title: "The Glow-Up Year",
     description: "Dive into the main topics and theoretical foundations",
     status: "locked",
     iconName: "PresentationChartLineIcon",
@@ -49,7 +49,7 @@ const roadMapItems = [
   },
   {
     id: 5,
-    title: "Practice Exercises",
+    title: "Brand New Me",
     description: "Apply knowledge through guided practice problems",
     status: "locked",
     iconName: "ChartBarIcon",
@@ -61,7 +61,7 @@ const roadMapItems = [
   },
   {
     id: 6,
-    title: "Coding Projects",
+    title: "Dreams, Goals & Game Plans",
     description: "Build real applications with guided coding exercises",
     status: "locked",
     iconName: "CodeBracketIcon",
@@ -73,7 +73,7 @@ const roadMapItems = [
   },
   {
     id: 7,
-    title: "Group Collaboration",
+    title: "Senior Status: Leadership Mode",
     description: "Collaborate with peers on real-world applications",
     status: "locked",
     iconName: "UserGroupIcon",
@@ -85,7 +85,7 @@ const roadMapItems = [
   },
   {
     id: 8,
-    title: "Final Assessment",
+    title: "Next Chapter Ready",
     description: "Complete quizzes, tests, and final evaluation",
     status: "locked",
     iconName: "TrophyIcon",
@@ -97,10 +97,10 @@ const roadMapItems = [
   },
   {
     id: 9,
-    title: "Course Completion",
+    title: "Beyond the Bell",
     description: "Review and reflect on your learning journey",
     status: "locked",
-    iconName: "TrophyIcon",
+    iconName: "MusicalNoteIcon",
     color: "from-rose-500 to-pink-400",
     bgColor: "bg-rose-50",
     borderColor: "border-rose-200",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import RoadmapCard from "../../components/landing/RoadmapCard";
 import ProgressSummary from "../../components/landing/ProgressSummary";
