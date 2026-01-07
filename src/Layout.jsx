@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
 
             {isDetailsPage && (
               <Link
-                to="/"
+                to="/roadmap/:id"
                 className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
               >
                 <ArrowLeftIcon className="h-4 w-4 mr-1" />
