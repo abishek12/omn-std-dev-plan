@@ -1,190 +1,122 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
-const RecordSteps = ({ description }) => (
-  <div className="bg-green-700 rounded-2xl shadow-lg">
-    <p className="text-white px-4 py-2">{description}</p>
-  </div>
-);
+const items = [
+  {
+    title: "Specific",
+    description:
+      "Be clear about what you want to do and why. Who is involved, andwhere will it happen?",
+  },
+  {
+    title: "Measurable",
+    description:
+      "Figure out how you’ll track your progress and know when you’ve reached your goal.",
+  },
+  {
+    title: "Achievable",
+    description: "Make sure your goal matters and fits with your bigger plans.",
+  },
+  {
+    title: "Realistic",
+    description: "Pick a goal you can realistically achieve with effort",
+  },
+  {
+    title: "Time",
+    description: "Set a deadline for when you want to finish your goal.",
+  },
+];
 
-const emptyRow = {
-  action: "",
-  timing: "",
-  success: "",
-  status: "",
-};
+const cardColorEven =
+  "bg-gradient-to-r from-purple-100 to-pink-100 text-gray-800";
 
-const columns = ["action", "timing", "success", "status"];
+const cardColorOdd =
+  "bg-gradient-to-r from-yellow-100 to-orange-100 text-gray-800";
 
-const M1S4 = () => {
-  const [rows, setRows] = useState(() => {
-    const saved = localStorage.getItem("m1s4_rows");
-    return saved ? JSON.parse(saved) : [{ ...emptyRow }];
-  });
+const M1S3 = () => {
   const inputRefs = useRef([]);
+  const [values, setValues] = useState(items.map(() => ""));
 
-  /* -------------------- Persistence -------------------- */
-  useEffect(() => {
-    localStorage.setItem("m1s4_rows", JSON.stringify(rows));
-  }, [rows]);
-
-  /* -------------------- Helpers -------------------- */
-  const isRowFilled = (row) => Object.values(row).some((v) => v.trim() !== "");
-
-  const isRowComplete = (row) =>
-    Object.values(row).every((v) => v.trim() !== "");
-
-  /* -------------------- Ref Management -------------------- */
-  const setInputRef = useCallback((rowIndex, colIndex, el) => {
-    if (!inputRefs.current[rowIndex]) {
-      inputRefs.current[rowIndex] = [];
-    }
-    inputRefs.current[rowIndex][colIndex] = el;
-  }, []);
-
-  /* -------------------- Handlers -------------------- */
-  const handleChange = (rowIndex, field, value) => {
-    setRows((prev) => {
+  const handleChange = (index, value) => {
+    setValues((prev) => {
       const updated = [...prev];
-      updated[rowIndex][field] = value;
-
-      const isLastRow = rowIndex === prev.length - 1;
-      if (isLastRow && isRowFilled(updated[rowIndex])) {
-        updated.push({ ...emptyRow });
-      }
-
+      updated[index] = value;
       return updated;
     });
   };
 
-  const handleKeyDown = (e, rowIndex, colIndex) => {
+  const handleKeyDown = (e, index) => {
     if (e.key !== "Enter") return;
 
-    e.preventDefault();
+    const currentValue = values[index].trim();
 
-    const nextCol = colIndex + 1;
-    const nextRow = rowIndex + 1;
+    // Prevent Enter if empty
+    if (!currentValue) return;
 
-    if (nextCol < columns.length) {
-      inputRefs.current[rowIndex]?.[nextCol]?.focus();
-    } else {
-      inputRefs.current[nextRow]?.[0]?.focus();
+    console.log({
+      title: items[index].title,
+      value: currentValue,
+    });
+
+    // Move focus to next input if exists
+    const nextIndex = index + 1;
+    if (inputRefs.current[nextIndex]) {
+      inputRefs.current[nextIndex].focus();
     }
   };
-
-  const handleBlur = (row) => {
-    if (isRowFilled(row)) {
-      console.log("Saving row:", row);
-      // Replace with API call later
-    }
-  };
-
-  const removeRow = (index) => {
-    setRows((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  /* -------------------- Render -------------------- */
   return (
     <div className="w-full h-full px-12 py-10">
-      <RecordSteps description="Record Steps, Goals, and Activities to Achieve This Milestone Inside School (Examples: LEEP Workshop, Engaging with Teachers, School Community Projects, and More)" />
-
-      <div className="mt-8">
-        <table className="w-full border-collapse rounded-lg overflow-hidden shadow-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="px-4 py-3 border text-left">
-                Action Steps (Inside School)
-              </th>
-              <th className="px-4 py-3 border text-left">Timing</th>
-              <th className="px-4 py-3 border text-left">Measure of Success</th>
-              <th className="px-4 py-3 border text-left">Status</th>
-              <th className="px-4 py-3 border"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {rows.map((row, rowIndex) => {
-              return (
-                <tr
-                  key={rowIndex}
-                  className={isRowComplete(row) ? "bg-green-50" : ""}
-                  onBlur={() => handleBlur(row)}
-                >
-                  {/* Action */}
-                  <td className="px-4 py-3 border">
-                    <input
-                      ref={(el) => setInputRef(rowIndex, 0, el)}
-                      value={row.action}
-                      onChange={(e) =>
-                        handleChange(rowIndex, "action", e.target.value)
-                      }
-                      onKeyDown={(e) => handleKeyDown(e, rowIndex, 0)}
-                      className="w-full py-2 focus:outline-none"
-                    />
-                  </td>
-
-                  {/* Timing */}
-                  <td className="px-4 py-3 border">
-                    <input
-                      ref={(el) => setInputRef(rowIndex, 1, el)}
-                      value={row.timing}
-                      onChange={(e) =>
-                        handleChange(rowIndex, "timing", e.target.value)
-                      }
-                      onKeyDown={(e) => handleKeyDown(e, rowIndex, 1)}
-                      className="w-full py-2 focus:outline-none"
-                    />
-                  </td>
-
-                  {/* Success */}
-                  <td className="px-4 py-3 border">
-                    <input
-                      ref={(el) => setInputRef(rowIndex, 2, el)}
-                      value={row.success}
-                      onChange={(e) =>
-                        handleChange(rowIndex, "success", e.target.value)
-                      }
-                      onKeyDown={(e) => handleKeyDown(e, rowIndex, 2)}
-                      className="w-full py-2 focus:outline-none"
-                    />
-                  </td>
-
-                  {/* Status */}
-                  <td className="px-4 py-3 border">
-                    <select
-                      ref={(el) => setInputRef(rowIndex, 3, el)}
-                      value={row.status}
-                      onChange={(e) =>
-                        handleChange(rowIndex, "status", e.target.value)
-                      }
-                      onKeyDown={(e) => handleKeyDown(e, rowIndex, 3)}
-                      className="w-full py-2 bg-transparent focus:outline-none"
-                    >
-                      <option value="">Select</option>
-                      <option value="pending">Pending</option>
-                      <option value="in-progress">In Progress</option>
-                      <option value="completed">Completed</option>
-                    </select>
-                  </td>
-
-                  {/* Delete */}
-                  <td className="px-4 py-3 border text-center">
-                    {isRowFilled(row) && (
-                      <button
-                        onClick={() => removeRow(rowIndex)}
-                        className="text-red-500 text-sm"
-                      >
-                        Delete
-                      </button>
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      {/* top section of 5 measures*/}
+      <div className="grid grid-cols-5 gap-4">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={`border p-4 rounded-lg shadow-sm ${
+              index % 2 === 0 ? cardColorEven : cardColorOdd
+            }`}
+          >
+            <h2 className="text-xl font-semibold mb-2 text-blue-600">
+              {item.title}
+            </h2>
+            <p className="text-gray-700">{item.description}</p>
+          </div>
+        ))}
       </div>
+      <p className="mt-8">
+        Write down your SMART goals, breaking them up by each letter. This way,
+        you’ll have 5 parts for each goal! Make sure each one is clear,
+        something you can track, realistic, important to you, and has a
+        deadline. This will help you stay focused and on track!
+      </p>
+
+      <table className="mt-8 w-full border-collapse rounded-lg overflow-hidden shadow-sm">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="text-left px-4 py-3 border">SMART Element</th>
+            <th className="text-left px-4 py-3 border">Your Input</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((item, index) => {
+            return (
+              <tr key={item.title} className="hover:bg-gray-50">
+                <td className="px-4 py-3 border font-medium">{item.title}</td>
+                <td className="px-4 py-3 border">
+                  <input
+                    ref={(el) => (inputRefs.current[index] = el)}
+                    type="text"
+                    value={values[index]}
+                    placeholder={`Enter your ${item.title}...`}
+                    onChange={(e) => handleChange(index, e.target.value)}
+                    onKeyDown={(e) => handleKeyDown(e, index)}
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };
 
-export default M1S4;
+export default M1S3;

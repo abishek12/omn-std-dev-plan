@@ -1,6 +1,6 @@
-import m1_s2 from "../../../assets/slides/one/m1_s2.png";
+import m1_s2 from "../../../assets/slides/one/m1_s3.png";
 
-const M1S2 = () => {
+const M1S5 = () => {
   return (
     <div className="flex w-full h-full">
       {/* LEFT CONTENT (Scrollable) */}
@@ -8,10 +8,10 @@ const M1S2 = () => {
         {/* Example extra content to demonstrate scrolling */}
         <div className="mt-16 space-y-6 text-gray-700">
           <p>
-           Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. 
-           We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. 
-           This is your first step toward making your dreams real, and we’re here to help you the whole way. 
-           Let’s get started and make it happen!
+           The development process starts with you! You know your interests, skills, and goals best.   
+          </p>
+          <p>
+            By understanding what's important to you, you can take control of your future and choose options that fit your priorities.
           </p>
         </div>
       </div>
@@ -30,4 +30,4 @@ const M1S2 = () => {
   );
 };
 
-export default M1S2;
+export default M1S5;
