@@ -1,4 +1,4 @@
-import pointImg from "../../../assets/slides/one/20point.png";
+import pointImg from "../../../assets/slides/one/twenty-point.png";
 
 const M1S16 = ({ goNext }) => {
   return (
