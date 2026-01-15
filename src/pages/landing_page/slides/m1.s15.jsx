@@ -10,9 +10,16 @@ const M1S15 = ({ onNext }) => {
   return (
     <div className="container-fluid px-5 px-xl-6 py-4">
       {/* SAMPLE HEADING */}
-      <h4 className="text-primary fw-bold mb-3">
+      <h4
+        className="text-center fw-bold mb-4"
+        style={{
+          fontSize: "1.8rem",
+          color: "#00b0f0"
+        }}
+      >
         SAMPLE CORE VALUE STATEMENT
       </h4>
+
 
       {/* SAMPLE TEXT */}
       <p className="fs-6 mb-5" style={{ lineHeight: "1.8", maxWidth: "1200px" }}>
@@ -20,11 +27,19 @@ const M1S15 = ({ onNext }) => {
         in always telling the truth, treating others with respect, and never
         giving up, even when things get tough. These values help me be the best
         version of myself and guide me toward my goals.”{" "}
-        <span className="text-primary fw-semibold">- QUEST</span>
+        <span className="text-primary fw-semibold"         
+        style={{
+          color: "#00b0f0"
+        }}>- QUEST</span>
       </p>
 
       {/* USER HEADING */}
-      <h3 className="text-center text-primary fw-bold mb-4">
+      <h3 className="text-center text-primary fw-bold mb-4"
+        style={{
+          fontSize: "1.8rem",
+          color: "#00b0f0"
+        }}
+        >
         MY PERSONAL CORE VALUE STATEMENT IS…
       </h3>
 
