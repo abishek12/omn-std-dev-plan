@@ -4,10 +4,9 @@ const M1S18 = ({ fetchCoreValues }) => {
   const [coreValues, setCoreValues] = useState([]);
 
   useEffect(() => {
-    // Fetch submitted core values from API
     const loadCoreValues = async () => {
       const data = await fetchCoreValues();
-      setCoreValues(data);
+      setCoreValues(data || []);
     };
     loadCoreValues();
   }, [fetchCoreValues]);
@@ -15,8 +14,12 @@ const M1S18 = ({ fetchCoreValues }) => {
   return (
     <div className="row">
       <div className="col-12 p-3">
-        <h2 className="text-center fw-bold mb-3">Your Submitted Core Values</h2>
+        {/* Heading */}
+        <h2 className="text-center fw-bold mb-3">
+          Your Submitted Core Values
+        </h2>
 
+        {/* API Table */}
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
@@ -36,7 +39,7 @@ const M1S18 = ({ fetchCoreValues }) => {
               ))
             ) : (
               <tr>
-                <td colSpan={3} className="text-center">
+                <td colSpan="3" className="text-center">
                   No core values submitted yet.
                 </td>
               </tr>

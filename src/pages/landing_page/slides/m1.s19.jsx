@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import actionImg from "../../../assets/slides/one/twenty-point.png";
 
-const M1S19 = ({ goNext }) => {
-  const [hover, setHover] = useState(false);
-
+const M1S9 = ({ onNext }) => {
   return (
     <div
       className="p-4 d-flex align-items-center justify-content-center"
@@ -13,8 +11,9 @@ const M1S19 = ({ goNext }) => {
         overflow: "hidden",
       }}
     >
-      <div className="row w-100">
-        {/* Text and Button */}
+      {/* Main Row */}
+      <div className="row w-100 align-items-center">
+        {/* Left Content */}
         <div className="col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-1 order-2">
           <div className="text-center position-relative">
             <h1
@@ -27,53 +26,59 @@ const M1S19 = ({ goNext }) => {
                 position: "relative",
                 zIndex: 2,
               }}
-            >
-              CLICK HERE
-              <br />
-              AND
-              <br />
-              TAKE ACTION
-            </h1>
+              dangerouslySetInnerHTML={{
+                __html: "CLICK HERE<br>AND<br>TAKE ACTION",
+              }}
+            />
 
+            {/* Divider */}
             <div
               className="mb-5 mx-auto"
               style={{
                 height: "6px",
-                background: "linear-gradient(90deg, #003366 0%, #00b0f0 100%)",
                 width: "120px",
+                background: "linear-gradient(90deg, #003366 0%, #00b0f0 100%)",
                 borderRadius: "3px",
               }}
             />
 
+            {/* Button */}
             <button
+              onClick={onNext}
               className="btn btn-lg rounded-pill fw-bold px-5 py-3"
               style={{
-                background: hover ? "#002244" : "#003366",
+                background: "#003366",
                 color: "white",
                 border: "none",
                 fontSize: "1.5rem",
-                boxShadow: hover
-                  ? "0 12px 25px rgba(0,0,0,0.2)"
-                  : "0 8px 20px rgba(0,0,0,0.15)",
+                boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
                 transition: "all 0.3s ease",
                 position: "relative",
                 zIndex: 2,
-                transform: hover ? "translateY(-3px)" : "none",
               }}
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-              onClick={goNext}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow =
+                  "0 12px 25px rgba(0,0,0,0.2)";
+                e.currentTarget.style.background = "#002244";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 20px rgba(0,0,0,0.15)";
+                e.currentTarget.style.background = "#003366";
+              }}
             >
               CLICK HERE
             </button>
           </div>
         </div>
 
-        {/* Image */}
+        {/* Right Image */}
         <div className="col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-2 order-1">
           <img
-            src="8.png"
-            alt="M1S19"
+            src={actionImg}
+            alt="Take Action"
             className="img-fluid position-relative"
             style={{
               maxHeight: "500px",
@@ -87,10 +92,10 @@ const M1S19 = ({ goNext }) => {
         </div>
       </div>
 
-      {/* Decorative Circles */}
+      {/* Decorative Circle Top Right */}
       <div
+        className="position-absolute"
         style={{
-          position: "absolute",
           top: "-100px",
           right: "-100px",
           width: "400px",
@@ -100,9 +105,11 @@ const M1S19 = ({ goNext }) => {
           zIndex: 1,
         }}
       />
+
+      {/* Decorative Circle Bottom Left */}
       <div
+        className="position-absolute"
         style={{
-          position: "absolute",
           bottom: "-150px",
           left: "-150px",
           width: "500px",
@@ -116,4 +123,4 @@ const M1S19 = ({ goNext }) => {
   );
 };
 
-export default M1S19;
+export default M1S9;
