@@ -26,19 +26,42 @@ import M1S20 from "./slides/m1.s20";
 
 import SlideWrapper from "../../components/slides/SlideWrapper";
 
-
 const LandingPageSlide = () => {
   const { id: stepId, slideNumber = 1 } = useParams();
   const navigate = useNavigate();
-  const [currentSlide, setCurrentSlide] = useState(parseInt(slideNumber) || 1);
+
+  const [currentSlide, setCurrentSlide] = useState(
+    parseInt(slideNumber) || 1
+  );
   const [completedSlides, setCompletedSlides] = useState([]);
 
-  // Slide configuration for each step
+  // Slide configuration
   const slideConfig = {
     1: {
       title: "Getting Started",
       totalSlides: 20,
-      components: [M1S1, M1S2, M1S3, M1S4, M1S5, M1S6, M1S7, M1S8, M1S9, M1S10, M1S11, M1S12, M1S13, M1S14, M1S15, M1S16, M1S17, M1S18, M1S19, M1S20],
+      components: [
+        M1S1,
+        M1S2,
+        M1S3,
+        M1S4,
+        M1S5,
+        M1S6,
+        M1S7,
+        M1S8,
+        M1S9,
+        M1S10,
+        M1S11,
+        M1S12,
+        M1S13,
+        M1S14,
+        M1S15,
+        M1S16,
+        M1S17,
+        M1S18,
+        M1S19,
+        M1S20,
+      ],
       color: "from-blue-600 to-indigo-700",
     },
     2: {
@@ -47,16 +70,18 @@ const LandingPageSlide = () => {
       components: [],
       color: "from-green-600 to-emerald-700",
     },
-    // ... add configurations for other steps
   };
 
   const config = slideConfig[stepId] || slideConfig[1];
   const totalSlides = config.totalSlides;
-  const CurrentSlideComponent = config.components[currentSlide - 1] || M1S1;
+  const CurrentSlideComponent =
+    config.components[currentSlide - 1] || M1S1;
 
+  // Sync URL with slide number
   useEffect(() => {
-    // Update URL when slide changes
-    navigate(`/roadmap/${stepId}/slides/${currentSlide}`, { replace: true });
+    navigate(`/roadmap/${stepId}/slides/${currentSlide}`, {
+      replace: true,
+    });
   }, [currentSlide, stepId, navigate]);
 
   const handleNext = () => {
@@ -80,10 +105,34 @@ const LandingPageSlide = () => {
   };
 
   const handleCompleteStep = () => {
-    // In a real app, this would update progress in backend
-    alert(`Congratulations! You've completed Step ${stepId}: ${config.title}`);
+    alert(
+      `Congratulations! You've completed Step ${stepId}: ${config.title}`
+    );
     navigate(`/roadmap/${stepId}`);
   };
+
+  // ✅ Keyboard navigation (Left / Right arrows)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // prevent slide change while typing
+      const activeTag = document.activeElement.tagName;
+      if (activeTag === "INPUT" || activeTag === "TEXTAREA") return;
+
+      if (e.key === "ArrowRight") {
+        handleNext();
+      }
+
+      if (e.key === "ArrowLeft") {
+        handlePrev();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [currentSlide]);
 
   return (
     <Layout>

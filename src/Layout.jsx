@@ -1,10 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon, AcademicCapIcon } from "@heroicons/react/24/outline";
 
 const Layout = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const isDetailsPage =
-    location.pathname.includes("/roadmap/") && location.pathname !== "/roadmap";
+    location.pathname.includes("/roadmap/") &&
+    location.pathname !== "/roadmap";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -22,13 +25,13 @@ const Layout = ({ children }) => {
             </div>
 
             {isDetailsPage && (
-              <Link
-                to="/roadmap/:id"
+              <button
+                onClick={() => navigate(-1)}
                 className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
               >
                 <ArrowLeftIcon className="h-4 w-4 mr-1" />
                 Back to Roadmap
-              </Link>
+              </button>
             )}
           </div>
         </div>
