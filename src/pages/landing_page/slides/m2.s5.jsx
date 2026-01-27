@@ -15,7 +15,7 @@ const emptyRow = {
 
 const columns = ["action", "timing", "success", "status"];
 
-const M1S4 = () => {
+const M2S5 = () => {
   const [rows, setRows] = useState(() => {
     const saved = localStorage.getItem("m1s4_rows");
     return saved ? JSON.parse(saved) : [{ ...emptyRow }];
@@ -187,4 +187,4 @@ const M1S4 = () => {
   );
 };
 
-export default M1S4;
+export default M2S5;

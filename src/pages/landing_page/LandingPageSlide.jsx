@@ -23,8 +23,18 @@ import M1S17 from "./slides/m1.s17";
 import M1S18 from "./slides/m1.s18";
 import M1S19 from "./slides/m1.s19";
 import M1S20 from "./slides/m1.s20";
+import M2S1 from "./slides/m2.s1";
+import M2S2 from "./slides/m2.s2";
+import M2S3 from "./slides/m2.s3";
+import M2S4 from "./slides/m2.s4";
+import M2S5 from "./slides/m2.s5";
+import M2S6 from "./slides/m2.s6";
 
 import SlideWrapper from "../../components/slides/SlideWrapper";
+
+
+
+
 
 const LandingPageSlide = () => {
   const { id: stepId, slideNumber = 1 } = useParams();
@@ -39,12 +49,10 @@ const LandingPageSlide = () => {
   const slideConfig = {
     1: {
       title: "Getting Started",
-      totalSlides: 20,
+      totalSlides: 18,
       components: [
         M1S1,
         M1S2,
-        M1S3,
-        M1S4,
         M1S5,
         M1S6,
         M1S7,
@@ -66,8 +74,15 @@ const LandingPageSlide = () => {
     },
     2: {
       title: "Course Orientation",
-      totalSlides: 5,
-      components: [],
+      totalSlides: 6,
+      components: [
+        M2S1,
+        M2S2,
+        M2S3,
+        M2S4,
+        M2S5,
+        M2S6,
+      ],
       color: "from-green-600 to-emerald-700",
     },
   };

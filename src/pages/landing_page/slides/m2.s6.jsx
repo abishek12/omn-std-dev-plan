@@ -31,7 +31,7 @@ const cardColorEven =
 const cardColorOdd =
   "bg-gradient-to-r from-yellow-100 to-orange-100 text-gray-800";
 
-const M1S3 = () => {
+const M2S4 = () => {
   const inputRefs = useRef([]);
   const [values, setValues] = useState(items.map(() => ""));
 
@@ -119,4 +119,4 @@ const M1S3 = () => {
   );
 };
 
-export default M1S3;
+export default M2S4;
