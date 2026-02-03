@@ -2,7 +2,7 @@ import Layout from "../../Layout";
 import RoadmapDetailTemplate from "../../components/ui/RoadmapDetailTemplate";
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
 
-const LandingPageDetails = () => {
+const PlanOne = () => {
   return (
     <Layout>
       <RoadmapDetailTemplate
@@ -76,4 +76,4 @@ const LandingPageDetails = () => {
   );
 };
 
-export default LandingPageDetails;
+export default PlanOne;

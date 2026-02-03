@@ -35,17 +35,11 @@ import M2S11 from "./slides/m2.s11";
 
 import SlideWrapper from "../../components/slides/SlideWrapper";
 
-
-
-
-
 const LandingPageSlide = () => {
   const { id: stepId, slideNumber = 1 } = useParams();
   const navigate = useNavigate();
 
-  const [currentSlide, setCurrentSlide] = useState(
-    parseInt(slideNumber) || 1
-  );
+  const [currentSlide, setCurrentSlide] = useState(parseInt(slideNumber) || 1);
   const [completedSlides, setCompletedSlides] = useState([]);
 
   // Slide configuration
@@ -97,8 +91,7 @@ const LandingPageSlide = () => {
 
   const config = slideConfig[stepId] || slideConfig[1];
   const totalSlides = config.totalSlides;
-  const CurrentSlideComponent =
-    config.components[currentSlide - 1] || M1S1;
+  const CurrentSlideComponent = config.components[currentSlide - 1] || M1S1;
 
   // Sync URL with slide number
   useEffect(() => {
@@ -128,13 +121,10 @@ const LandingPageSlide = () => {
   };
 
   const handleCompleteStep = () => {
-    alert(
-      `Congratulations! You've completed Step ${stepId}: ${config.title}`
-    );
+    alert(`Congratulations! You've completed Step ${stepId}: ${config.title}`);
     navigate(`/roadmap/${stepId}`);
   };
 
-  // ✅ Keyboard navigation (Left / Right arrows)
   useEffect(() => {
     const handleKeyDown = (e) => {
       // prevent slide change while typing
