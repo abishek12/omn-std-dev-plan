@@ -15,7 +15,7 @@ const M2S7 = () => {
           fontSize: "24px",
           fontFamily: "'Acme', sans-serif",
           textAlign: "left",
-          marginLeft: "400px",
+          marginLeft: "250px",
         }}
       >
         S.M.A.R.T STANDS FOR
@@ -23,11 +23,11 @@ const M2S7 = () => {
 
       {/* SMART Points */}
       {[
-        "Specific: Improve my math grade",
-        "Measurable: From a B to an A.",
+        "Specific: Improve my drawing skills",
+        "Measurable: Practice for 30 minutes every day.",
         "Achievable: Daily practice is a realistic goal.",
-        "Relevant: Improving my math grade.",
-        "Time-bound: By the end of the semester.",
+        "Relevant: Creating a portfolio for art school aligns with the personal aspiration of becoming an artist.",
+        "Time-bound: The goal is set for the next 3 months.",
       ].map((text, index) => (
         <p
           key={index}
@@ -37,7 +37,7 @@ const M2S7 = () => {
             fontFamily: "'Arial Rounded MT Bold', Arial, sans-serif",
             fontWeight: "700",
             textAlign: "left",
-            marginLeft: "400px",
+            marginLeft: "250px",
             maxWidth: "1000px",
           }}
         >
@@ -58,7 +58,7 @@ const M2S7 = () => {
           fontFamily: "'Acme', sans-serif",
         }}
       >
-        MY ACADEMIC S.M.A.R.T GOAL IS.
+        MY PERSONAL S.M.A.R.T GOAL IS.
       </h4>
 
       {/* Decorative Images */}

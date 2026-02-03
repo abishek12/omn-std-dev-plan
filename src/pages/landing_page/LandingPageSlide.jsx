@@ -5,8 +5,6 @@ import Layout from "../../Layout";
 
 import M1S1 from "./slides/m1.s1";
 import M1S2 from "./slides/m1.s2";
-import M1S3 from "./slides/m1.s3";
-import M1S4 from "./slides/m1.s3";
 import M1S5 from "./slides/m1.s5";
 import M1S6 from "./slides/m1.s6";
 import M1S7 from "./slides/m1.s7";
@@ -29,6 +27,11 @@ import M2S3 from "./slides/m2.s3";
 import M2S4 from "./slides/m2.s4";
 import M2S5 from "./slides/m2.s5";
 import M2S6 from "./slides/m2.s6";
+import M2S7 from "./slides/m2.s7";
+import M2S8 from "./slides/m2.s8";
+import M2S9 from "./slides/m2.s9";
+import M2S10 from "./slides/m2.s10";
+import M2S11 from "./slides/m2.s11";
 
 import SlideWrapper from "../../components/slides/SlideWrapper";
 
@@ -74,7 +77,7 @@ const LandingPageSlide = () => {
     },
     2: {
       title: "Course Orientation",
-      totalSlides: 6,
+      totalSlides: 11,
       components: [
         M2S1,
         M2S2,
@@ -82,6 +85,11 @@ const LandingPageSlide = () => {
         M2S4,
         M2S5,
         M2S6,
+        M2S7,
+        M2S8,
+        M2S9,
+        M2S10,
+        M2S11,
       ],
       color: "from-green-600 to-emerald-700",
     },
