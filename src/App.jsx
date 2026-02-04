@@ -1,10 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useParams,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route, useParams, Navigate } from "react-router-dom";
 
 import LandingPage from "./pages/landing_page/LandingPage";
 import PlanOne from "./pages/plan_one/plan.one";
@@ -45,18 +39,16 @@ const PlanSlidesWrapper = () => {
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/roadmap/:id" element={<PlanDetailsWrapper />} />
-        <Route
-          path="/roadmap/:id/slides/:slideNumber"
-          element={<PlanSlidesWrapper />}
-        />
-        {/* Fallback route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/roadmap/:id" element={<PlanDetailsWrapper />} />
+      <Route
+        path="/roadmap/:id/slides/:slideNumber"
+        element={<PlanSlidesWrapper />}
+      />
+      {/* Fallback route */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 };
 
