@@ -10,6 +10,7 @@ const roadMapItems = [
     borderColor: "border-blue-200",
     estimatedTime: "1 hour",
     progress: 100,
+    completedAt: "Jan 12, 2026",
   },
   {
     id: 2,
