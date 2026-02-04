@@ -1,6 +1,6 @@
 import { Routes, Route, useParams, Navigate } from "react-router-dom";
 
-import LandingPage from "./pages/landing_page/LandingPage";
+import LandingPage from "./pages/landing_page/landing.page";
 import PlanOne from "./pages/plan_one/plan.one";
 import PlanOneSlides from "./pages/plan_one/plan.one.slides";
 

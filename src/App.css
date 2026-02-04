@@ -3,3 +3,16 @@
 .clip-diagonal {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
 }
+
+@theme {
+  --color-primary: #667085;
+  --color-secondary: #333843;
+  --color-warning: #FFC107;
+  --color-leepColor: #6AB740;
+  /* You can also define shades */
+  --color-navy-100: #e0e0f0;
+  --color-navy-900: #1a1a3a;
+
+  /* Fonts */
+  --font-helvetica: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
