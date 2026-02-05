@@ -1,8 +1,16 @@
 import { Clock, Lock, Play, Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const StepCard = ({ step }) => {
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    step.status === "locked" ? null : navigate(`/roadmap/${step.id}`);
+  };
   return (
-    <div className="rounded-xl border border-blue-200 bg-white p-6 space-y-4">
+    <div
+      className="rounded-xl border border-blue-200 bg-white p-6 space-y-4 hover:cursor-pointer hover:shadow-cyan-50 transition-shadow duration-300"
+      onClick={() => handleCardClick()}
+    >
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-4">

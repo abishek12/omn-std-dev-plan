@@ -3,28 +3,21 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import Layout from "../../Layout";
 
-import M1S1 from "./slides/m1.s1";
-import M1S2 from "./slides/m1.s2";
-import M1S5 from "./slides/m1.s5";
-import M1S6 from "./slides/m1.s6";
-import M1S7 from "./slides/m1.s7";
-import M1S8 from "./slides/m1.s8";
-import M1S9 from "./slides/m1.s9";
-import M1S10 from "./slides/m1.s10";
-import M1S11 from "./slides/m1.s11";
-import M1S12 from "./slides/m1.s12";
-import M1S13 from "./slides/m1.s13";
-import M1S14 from "./slides/m1.s14";
-import M1S15 from "./slides/m1.s15";
-import M1S16 from "./slides/m1.s16";
-import M1S17 from "./slides/m1.s17";
-import M1S18 from "./slides/m1.s18";
-import M1S19 from "./slides/m1.s19";
-import M1S20 from "./slides/m1.s20";
+import M2S1 from "./slides/m2.s1";
+import M2S2 from "./slides/m2.s2";
+import M2S3 from "./slides/m2.s3";
+import M2S4 from "./slides/m2.s4";
+import M2S5 from "./slides/m2.s5";
+import M2S6 from "./slides/m2.s6";
+import M2S7 from "./slides/m2.s7";
+import M2S8 from "./slides/m2.s8";
+import M2S9 from "./slides/m2.s9";
+import M2S10 from "./slides/m2.s10";
+import M2S11 from "./slides/m2.s11";
 
 import SlideWrapper from "../../components/slides/SlideWrapper";
 
-const PageOneSlide = () => {
+const PageTwoSlide = () => {
   const { id: stepId, slideNumber = 1 } = useParams();
   const navigate = useNavigate();
 
@@ -33,34 +26,27 @@ const PageOneSlide = () => {
 
   // Slide configuration
   const slideConfig = {
-    title: "Getting Started",
+    title: "Squad Goals & Seld-Growth",
     totalSlides: 18,
     components: [
-      M1S1,
-      M1S2,
-      M1S5,
-      M1S6,
-      M1S7,
-      M1S8,
-      M1S9,
-      M1S10,
-      M1S11,
-      M1S12,
-      M1S13,
-      M1S14,
-      M1S15,
-      M1S16,
-      M1S17,
-      M1S18,
-      M1S19,
-      M1S20,
+      M2S1,
+      M2S2,
+      M2S3,
+      M2S4,
+      M2S5,
+      M2S6,
+      M2S7,
+      M2S8,
+      M2S9,
+      M2S10,
+      M2S11,
     ],
-    color: "from-blue-600 to-indigo-700",
+    color: "from-green-600 to-indigo-700",
   };
 
   const totalSlides = slideConfig.totalSlides;
   const CurrentSlideComponent =
-    slideConfig.components[currentSlide - 1] || M1S1;
+    slideConfig.components[currentSlide - 1] || M2S1;
 
   // Sync URL with slide number
   useEffect(() => {
@@ -136,4 +122,4 @@ const PageOneSlide = () => {
   );
 };
 
-export default PageOneSlide;
+export default PageTwoSlide;

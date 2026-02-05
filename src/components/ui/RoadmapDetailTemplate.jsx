@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeftIcon,
   ClockIcon,
@@ -8,6 +8,7 @@ import {
   CheckCircleIcon,
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
+import "../../App.css";
 
 const RoadmapDetailTemplate = ({
   title,
