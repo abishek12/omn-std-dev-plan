@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.4",
     "compression": "^1.8.1",
@@ -21,6 +22,7 @@
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.11.0",
     "sirv": "^3.0.2"
   },
