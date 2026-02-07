@@ -1,4 +1,4 @@
-import m1Img from "../../../assets/slides/one/mil1.png";
+import m1Img from "/slides/one/mil1.png";
 
 const M1S9 = ({ onNext }) => {
   return (

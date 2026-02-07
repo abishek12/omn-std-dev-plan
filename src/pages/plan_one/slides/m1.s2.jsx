@@ -1,4 +1,4 @@
-import m1_s2 from "../../../assets/slides/one/m1_s2.png";
+import m1_s2 from "/slides/one/m1_s2.png";
 
 const M1S2 = () => {
   return (
@@ -25,9 +25,9 @@ const M1S2 = () => {
         }}
       >
         <p>
-          Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome
-          journey built just for you. We’ll give you the tools, skills, and a
-          simple plan to help you reach your goals in school and in life.
+          Welcome to LEEP’s 9th Grade Development Plans! Get ready for an
+          awesome journey built just for you. We’ll give you the tools, skills,
+          and a simple plan to help you reach your goals in school and in life.
         </p>
 
         <p style={{ marginTop: "16px" }}>

@@ -1,4 +1,4 @@
-import mil1Img from "../../../assets/slides/one/mil1.png";
+import mil1Img from "/slides/one/mil1.png";
 
 const M2S2 = ({ goToSlide }) => {
   return (
@@ -12,8 +12,7 @@ const M2S2 = ({ goToSlide }) => {
           onClick={() => goToSlide(13)}
           className="bg-white w-full text-left px-4 py-3 mb-4 rounded text-base font-medium"
         >
-          Create Your{" "}
-          <span style={{ color: "#4CAF50" }}>Academic Smart</span>{" "}
+          Create Your <span style={{ color: "#4CAF50" }}>Academic Smart</span>{" "}
           Goal
         </button>
 
@@ -21,8 +20,7 @@ const M2S2 = ({ goToSlide }) => {
           onClick={() => goToSlide(15)}
           className="bg-white w-full text-left px-4 py-3 rounded text-base font-medium"
         >
-          Create Your{" "}
-          <span style={{ color: "#4CAF50" }}>Personal Smart</span>{" "}
+          Create Your <span style={{ color: "#4CAF50" }}>Personal Smart</span>{" "}
           Goal
         </button>
       </div>

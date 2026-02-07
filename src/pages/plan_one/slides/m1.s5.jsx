@@ -1,4 +1,4 @@
-import m1_s2 from "../../../assets/slides/one/m1_s3.png";
+import m1_s2 from "/slides/one/m1_s3.png";
 
 const M1S5 = () => {
   return (
@@ -8,10 +8,12 @@ const M1S5 = () => {
         {/* Example extra content to demonstrate scrolling */}
         <div className="mt-16 space-y-6 text-gray-700">
           <p>
-           The development process starts with you! You know your interests, skills, and goals best.   
+            The development process starts with you! You know your interests,
+            skills, and goals best.
           </p>
           <p>
-            By understanding what's important to you, you can take control of your future and choose options that fit your priorities.
+            By understanding what's important to you, you can take control of
+            your future and choose options that fit your priorities.
           </p>
         </div>
       </div>

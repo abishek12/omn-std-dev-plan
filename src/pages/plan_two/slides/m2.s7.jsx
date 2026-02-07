@@ -1,11 +1,10 @@
-import lightbulbImg from "../../../assets/slides/one/lightbulb.jpg";
-import sunImg from "../../../assets/slides/one/sun.jpg";
-import globeImg from "../../../assets/slides/one/globe.jpg";
+import lightbulbImg from "/slides/one/lightbulb.jpg";
+import sunImg from "/slides/one/sun.jpg";
+import globeImg from "/slides/one/globe.jpg";
 
 const M2S7 = () => {
   return (
     <div className="position-relative bg-white p-4">
-
       {/* Heading */}
       <h3
         className="mb-4"
@@ -41,9 +40,7 @@ const M2S7 = () => {
             maxWidth: "1000px",
           }}
         >
-          <span style={{ color: "#0099FF" }}>
-            {text.charAt(0)}
-          </span>
+          <span style={{ color: "#0099FF" }}>{text.charAt(0)}</span>
           {text.slice(1)}
         </p>
       ))}

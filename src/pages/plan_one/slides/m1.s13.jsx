@@ -1,4 +1,4 @@
-import pointsImg from "../../../assets/slides/one/twenty-point.png";
+import pointsImg from "/slides/one/twenty-point.png";
 
 const M1S13 = ({ onNext }) => {
   return (
@@ -39,8 +39,8 @@ const M1S13 = ({ onNext }) => {
           >
             <p style={{ fontSize: "0.95rem" }}>
               Now, write down 10–15 values that really matter to you, like
-              honesty, kindness, or creativity. Then, narrow it down to your
-              top 5 core values. These are the ones that guide what you do every
+              honesty, kindness, or creativity. Then, narrow it down to your top
+              5 core values. These are the ones that guide what you do every
               day.
             </p>
           </div>

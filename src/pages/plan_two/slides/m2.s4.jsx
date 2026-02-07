@@ -1,4 +1,4 @@
-import pointsImg from "../../../assets/slides/one/twenty-point.png";
+import pointsImg from "/slides/one/twenty-point.png";
 
 const M2S4 = ({ onNext }) => {
   return (
@@ -8,10 +8,7 @@ const M2S4 = ({ onNext }) => {
     >
       {/* Title */}
       <div className="text-center mb-6">
-        <h2
-          className="font-bold"
-          style={{ fontSize: "1.8rem" }}
-        >
+        <h2 className="font-bold" style={{ fontSize: "1.8rem" }}>
           ACADEMIC S.M.A.R.T GOALS
         </h2>
       </div>
@@ -30,8 +27,8 @@ const M2S4 = ({ onNext }) => {
             <p style={{ fontSize: "0.95rem" }}>
               An Academic SMART goal is like a game plan to help you crush it in
               school! It’s all about being Specific (knowing exactly what you
-              want), Measurable (tracking your progress), Achievable (making sure
-              it’s doable), Relevant (keeping it important to you), and
+              want), Measurable (tracking your progress), Achievable (making
+              sure it’s doable), Relevant (keeping it important to you), and
               Time-bound (setting a deadline). With a SMART goal, you know what
               you’re aiming for and how to get there!
             </p>
@@ -47,11 +44,9 @@ const M2S4 = ({ onNext }) => {
               borderLeft: "4px solid #92d050",
             }}
           >
-            <h3
-              className="font-bold mb-2"
-              style={{ fontSize: "1.1rem" }}
-            >
-              THINGS YOU SHOULD ASK YOURSELF WHEN CREATING AN ACADEMIC SMART GOAL
+            <h3 className="font-bold mb-2" style={{ fontSize: "1.1rem" }}>
+              THINGS YOU SHOULD ASK YOURSELF WHEN CREATING AN ACADEMIC SMART
+              GOAL
             </h3>
 
             <div

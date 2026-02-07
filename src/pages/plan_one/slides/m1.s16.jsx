@@ -1,4 +1,4 @@
-import pointImg from "../../../assets/slides/one/twenty-point.png";
+import pointImg from "/slides/one/twenty-point.png";
 
 const M1S16 = ({ goNext }) => {
   return (
@@ -12,7 +12,7 @@ const M1S16 = ({ goNext }) => {
           src={pointImg}
           alt="Points"
           className="object-contain"
-          style={{ maxHeight: "120px"}}
+          style={{ maxHeight: "120px" }}
         />
       </div>
 

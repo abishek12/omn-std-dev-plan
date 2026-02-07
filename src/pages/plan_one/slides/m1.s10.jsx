@@ -1,6 +1,6 @@
-import lightbulbImg from "../../../assets/slides/one/lightbulb.jpg";
-import sunImg from "../../../assets/slides/one/sun.jpg";
-import globeImg from "../../../assets/slides/one/globe.jpg";
+import lightbulbImg from "/slides/one/lightbulb.jpg";
+import sunImg from "/slides/one/sun.jpg";
+import globeImg from "/slides/one/globe.jpg";
 
 const M1S10 = ({ onNext }) => {
   return (
@@ -24,8 +24,7 @@ const M1S10 = ({ onNext }) => {
         <span className="font-bold">
           LE<span style={{ color: "#92d050" }}>E</span>P’s
         </span>
-        <br />
-        & starting your awesome journey.
+        <br />& starting your awesome journey.
       </h2>
 
       {/* Paragraph */}
@@ -81,7 +80,6 @@ const M1S10 = ({ onNext }) => {
           width: "100px",
         }}
       />
-
     </div>
   );
 };

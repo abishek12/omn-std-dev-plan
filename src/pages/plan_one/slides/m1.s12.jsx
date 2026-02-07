@@ -1,4 +1,4 @@
-import mil1Img from "../../../assets/slides/one/mil1.png";
+import mil1Img from "/slides/one/mil1.png";
 
 const M1S12 = ({ goToSlide }) => {
   return (
@@ -21,16 +21,16 @@ const M1S12 = ({ goToSlide }) => {
           onClick={() => goToSlide(13)}
           className="bg-white w-full text-left px-4 py-3 mb-4 rounded text-base font-medium"
         >
-          Create a Personal{" "}
-          <span style={{ color: "#4CAF50" }}>Core Value</span> Statement
+          Create a Personal <span style={{ color: "#4CAF50" }}>Core Value</span>{" "}
+          Statement
         </button>
 
         <button
           onClick={() => goToSlide(15)}
           className="bg-white w-full text-left px-4 py-3 rounded text-base font-medium"
         >
-          Create a Personal{" "}
-          <span style={{ color: "#4CAF50" }}>Mission</span> Statement
+          Create a Personal <span style={{ color: "#4CAF50" }}>Mission</span>{" "}
+          Statement
         </button>
       </div>
     </div>

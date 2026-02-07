@@ -1,4 +1,4 @@
-import pointsImg from "../../../assets/slides/one/twenty-point.png";
+import pointsImg from "/slides/one/twenty-point.png";
 
 const M2S4 = ({ onNext }) => {
   return (
@@ -8,10 +8,7 @@ const M2S4 = ({ onNext }) => {
     >
       {/* Title */}
       <div className="text-center mb-6">
-        <h2
-          className="font-bold"
-          style={{ fontSize: "1.8rem" }}
-        >
+        <h2 className="font-bold" style={{ fontSize: "1.8rem" }}>
           PERSONAL S.M.A.R.T GOALS
         </h2>
       </div>
@@ -28,9 +25,12 @@ const M2S4 = ({ onNext }) => {
             }}
           >
             <p style={{ fontSize: "0.95rem" }}>
-            A personal S.M.A.R.T. goal is like a roadmap to make your dreams happen! It’s a goal that's Specific (clearly says what you want), 
-            Measurable (you can track it), Achievable (you can do it!), Relevant (it matters to you), and Time-bound (has a deadline). With a S.M.A.R.T. goal, 
-            you're not just wishing for something—you’re setting yourself up to make it real!
+              A personal S.M.A.R.T. goal is like a roadmap to make your dreams
+              happen! It’s a goal that's Specific (clearly says what you want),
+              Measurable (you can track it), Achievable (you can do it!),
+              Relevant (it matters to you), and Time-bound (has a deadline).
+              With a S.M.A.R.T. goal, you're not just wishing for
+              something—you’re setting yourself up to make it real!
             </p>
           </div>
         </div>
@@ -44,11 +44,9 @@ const M2S4 = ({ onNext }) => {
               borderLeft: "4px solid #92d050",
             }}
           >
-            <h3
-              className="font-bold mb-2"
-              style={{ fontSize: "1.1rem" }}
-            >
-              THINGS YOU SHOULD ASK YOURSELF WHEN CREATING AN ACADEMIC SMART GOAL
+            <h3 className="font-bold mb-2" style={{ fontSize: "1.1rem" }}>
+              THINGS YOU SHOULD ASK YOURSELF WHEN CREATING AN ACADEMIC SMART
+              GOAL
             </h3>
 
             <div

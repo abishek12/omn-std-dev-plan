@@ -1,4 +1,4 @@
-import m1_s1 from "../../../assets/slides/one/m1_s1.png";
+import m1_s1 from "/slides/one/m1_s1.png";
 
 const M1S1 = ({ onNext }) => {
   return (
@@ -16,10 +16,7 @@ const M1S1 = ({ onNext }) => {
           height: "80%",
         }}
       >
-        <img
-          src={m1_s1}
-          alt="Student Development Journey"
-        />
+        <img src={m1_s1} alt="Student Development Journey" />
       </div>
 
       {/* RIGHT CONTENT */}

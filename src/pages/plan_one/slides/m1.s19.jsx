@@ -1,4 +1,4 @@
-import actionImg from "../../../assets/slides/one/twenty-point.png";
+import actionImg from "/slides/one/twenty-point.png";
 
 const M1S9 = ({ onNext }) => {
   return (
@@ -58,14 +58,12 @@ const M1S9 = ({ onNext }) => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow =
-                  "0 12px 25px rgba(0,0,0,0.2)";
+                e.currentTarget.style.boxShadow = "0 12px 25px rgba(0,0,0,0.2)";
                 e.currentTarget.style.background = "#002244";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 20px rgba(0,0,0,0.15)";
+                e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
                 e.currentTarget.style.background = "#003366";
               }}
             >

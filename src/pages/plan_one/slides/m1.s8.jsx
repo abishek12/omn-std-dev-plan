@@ -1,4 +1,4 @@
-import leepImg from "../../../assets/slides/one/leep.png";
+import leepImg from "/slides/one/leep.png";
 
 const M1S8 = () => {
   return (

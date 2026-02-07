@@ -1,4 +1,4 @@
-import pointsImg from "../../../assets/slides/one/twenty-point.png";
+import pointsImg from "/slides/one/twenty-point.png";
 
 const M2S3 = () => {
   return (
