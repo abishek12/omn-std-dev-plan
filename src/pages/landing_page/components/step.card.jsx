@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 const StepCard = ({ step }) => {
   const navigate = useNavigate();
   const handleCardClick = () => {
-    step.status === "locked" ? null : navigate(`/roadmap/${step.id}`);
+    step.status === "locked"
+      ? null
+      : navigate(`/roadmap/${step.phase}`, { state: { items: step } });
   };
   return (
     <div
@@ -27,7 +29,7 @@ const StepCard = ({ step }) => {
                 ${step.status === "locked" && "bg-gray-200 text-gray-500"}
               `}
             >
-              Step {step.id}
+              Step {step.phase}
             </span>
 
             <h3 className="mt-1 text-lg font-semibold text-gray-800">
@@ -43,7 +45,7 @@ const StepCard = ({ step }) => {
       </div>
 
       {/* Description */}
-      <p className="text-gray-500 text-sm">{step.description}</p>
+      <p className="text-gray-500 text-sm">{step.caption}</p>
 
       {/* Completed */}
       {step.status === "completed" && (

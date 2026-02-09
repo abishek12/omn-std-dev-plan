@@ -5,8 +5,6 @@ import {
   BookOpenIcon,
   DocumentTextIcon,
   VideoCameraIcon,
-  CheckCircleIcon,
-  CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import "../../App.css";
 
@@ -17,7 +15,6 @@ const RoadmapDetailTemplate = ({
   estimatedTime,
   prerequisites = [],
   resources = [],
-  actions = [],
   nextStepId,
   prevStepId,
   icon,
@@ -87,60 +84,27 @@ const RoadmapDetailTemplate = ({
                     className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors"
                   >
                     <div className="flex items-center mb-2">
-                      {resource.type === "video" && (
+                      {resource?.type === "video" && (
                         <VideoCameraIcon className="h-5 w-5 text-red-500 mr-2" />
                       )}
-                      {resource.type === "document" && (
+                      {resource?.type === "pdf" && (
                         <DocumentTextIcon className="h-5 w-5 text-green-500 mr-2" />
                       )}
                       <h4 className="font-bold text-gray-800">
-                        {resource.title}
+                        {resource?.title}
                       </h4>
                     </div>
                     <p className="text-gray-600 text-sm mb-3">
                       {resource.description}
                     </p>
                     <a
-                      href={resource.link}
+                      href={resource?.file_url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       Access Resource →
                     </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Actions Section */}
-          {actions.length > 0 && (
-            <div className="mt-12">
-              <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500" />
-                Required Actions
-              </h3>
-              <div className="space-y-4">
-                {actions.map((action, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                      <span className="text-green-600 font-bold">
-                        {index + 1}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-800">
-                        {action.title}
-                      </h4>
-                      <p className="text-gray-600">{action.description}</p>
-                      {action.deadline && (
-                        <div className="flex items-center mt-2 text-sm text-gray-500">
-                          <CalendarDaysIcon className="h-4 w-4 mr-1" />
-                          Deadline: {action.deadline}
-                        </div>
-                      )}
-                    </div>
                   </div>
                 ))}
               </div>
@@ -194,7 +158,7 @@ const RoadmapDetailTemplate = ({
                   {prerequisites.map((prereq, index) => (
                     <li key={index} className="flex items-center text-gray-600">
                       <div className="w-2 h-2 rounded-full bg-blue-500 mr-3"></div>
-                      {prereq}
+                      {prereq.item}
                     </li>
                   ))}
                 </ul>
