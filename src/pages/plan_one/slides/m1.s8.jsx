@@ -1,10 +1,10 @@
-import leepImg from "../../../assets/slides/one/leep.png";
+
 
 const M1S8 = () => {
   return (
     <div className="w-full">
       <img
-        src={leepImg}
+        src="/slides/one/leep.png"
         alt="LEEP"
         className="w-full block object-cover"
         style={{

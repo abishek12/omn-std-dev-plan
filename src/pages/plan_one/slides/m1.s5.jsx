@@ -1,5 +1,3 @@
-import m1_s2 from "../../../assets/slides/one/m1_s3.png";
-
 const M1S5 = () => {
   return (
     <div className="flex w-full h-full">
@@ -20,7 +18,7 @@ const M1S5 = () => {
       <div className="w-1/2 relative">
         <div className="absolute inset-0 clip-diagonal">
           <img
-            src={m1_s2}
+            src="/slides/one/m1_s3.png"
             alt="Student Development Journey"
             className="w-full h-full object-cover"
           />

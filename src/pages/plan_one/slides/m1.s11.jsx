@@ -1,4 +1,4 @@
-import pointsImg from "../../../assets/slides/one/twenty-point.png";
+
 
 const M1S11 = ({ onNext }) => {
   return (
@@ -7,7 +7,7 @@ const M1S11 = ({ onNext }) => {
       <div className="flex justify-center mb-6">
         <div className="w-full md:w-1/2 p-4">
           <img
-            src={pointsImg}
+            src="/slides/one/point.png"
             alt="Milestone points"
             className="w-full object-contain"
             style={{ maxHeight: "30vh" }}

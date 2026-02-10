@@ -1,4 +1,4 @@
-import actionImg from "../../../assets/slides/one/twenty-point.png";
+
 
 const M1S9 = ({ onNext }) => {
   return (
@@ -77,7 +77,7 @@ const M1S9 = ({ onNext }) => {
         {/* Right Image */}
         <div className="col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-2 order-1">
           <img
-            src={actionImg}
+            src="/slides/one/point.png"
             alt="Take Action"
             className="img-fluid position-relative"
             style={{

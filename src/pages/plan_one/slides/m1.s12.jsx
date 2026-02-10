@@ -1,4 +1,4 @@
-import mil1Img from "../../../assets/slides/one/mil1.png";
+
 
 const M1S12 = ({ goToSlide }) => {
   return (
@@ -6,7 +6,7 @@ const M1S12 = ({ goToSlide }) => {
       {/* Left Image */}
       <div className="md:w-5/12 w-full p-0 flex">
         <img
-          src={mil1Img}
+          src="/slides/one/mil1.png"
           alt="Milestone 1"
           className="w-full h-full object-cover"
         />

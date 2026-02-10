@@ -1,5 +1,3 @@
-import m1_s2 from "../../../assets/slides/one/m1_s2.png";
-
 const M1S2 = () => {
   return (
     <div
@@ -47,7 +45,7 @@ const M1S2 = () => {
         }}
       >
         <img
-          src={m1_s2}
+          src="/slides/one/m1_s2.png"
           alt="Student Development Journey"
           style={{
             width: "100%",

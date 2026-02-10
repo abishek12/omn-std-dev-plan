@@ -1,4 +1,4 @@
-import m1Img from "../../../assets/slides/one/mil1.png";
+
 
 const M1S9 = ({ onNext }) => {
   return (
@@ -44,7 +44,7 @@ const M1S9 = ({ onNext }) => {
       {/* Right Image */}
       <div className="md:w-5/12 w-full p-0 flex">
         <img
-          src={m1Img}
+          src="/slides/one/mil1.png"
           alt="Take action"
           className="w-full h-full object-cover"
         />

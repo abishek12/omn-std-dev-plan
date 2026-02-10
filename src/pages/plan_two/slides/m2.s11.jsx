@@ -1,7 +1,3 @@
-import lightbulbImg from "../../../assets/slides/one/lightbulb.jpg";
-import sunImg from "../../../assets/slides/one/sun.jpg";
-import globeImg from "../../../assets/slides/one/globe.jpg";
-
 const M2S7 = () => {
   return (
     <div className="position-relative bg-white p-4">
@@ -63,7 +59,7 @@ const M2S7 = () => {
 
       {/* Decorative Images */}
       <img
-        src={lightbulbImg}
+        src="/slides/one/lightbulb.png"
         alt="Lightbulb"
         style={{
           position: "absolute",
@@ -74,7 +70,7 @@ const M2S7 = () => {
       />
 
       <img
-        src={sunImg}
+        src="/slides/one/sun.png"
         alt="Sun"
         style={{
           position: "absolute",
@@ -85,7 +81,7 @@ const M2S7 = () => {
       />
 
       <img
-        src={globeImg}
+        src="/slides/one/globe.png"
         alt="Globe"
         style={{
           position: "absolute",

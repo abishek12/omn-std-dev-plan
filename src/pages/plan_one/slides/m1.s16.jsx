@@ -1,4 +1,4 @@
-import pointImg from "../../../assets/slides/one/twenty-point.png";
+
 
 const M1S16 = ({ goNext }) => {
   return (
@@ -9,7 +9,7 @@ const M1S16 = ({ goNext }) => {
       {/* Top Image */}
       <div className="flex justify-center mb-4">
         <img
-          src={pointImg}
+          src="/slides/one/point.png"
           alt="Points"
           className="object-contain"
           style={{ maxHeight: "120px"}}
